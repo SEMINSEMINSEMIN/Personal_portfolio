@@ -1,0 +1,270 @@
+@media (prefers-reduced-motion: no-preference) {
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #cb808b;
+}
+
+#navbar {
+    margin-right: 1rem;
+}
+
+#navbar ul {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    padding: 1.05rem 1rem;
+}
+
+li:hover {
+    background-color: #1a364e;
+    cursor: pointer;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.section-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome-section, #profile {
+    height: 100vh;
+    background-color: #162a40;
+    font-size: 2rem;
+    color: linen;
+}
+
+#welcome-section > p {
+    font-size: 1.5rem;
+    color: #cb808b;
+}
+
+.italic {
+    font-style: italic;
+}
+
+#projects {
+    background-color: #28282A;
+    display: flex;
+    flex-direction: column;
+}
+
+#projects h2 {
+    border-bottom: solid linen;
+    color: linen;
+    padding: 3px;
+    margin: 5rem 0 3rem 0;
+}
+
+.project-tiles {
+    margin: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 2.5rem;
+    column-gap: 2.5rem;
+}
+
+@media only screen and (max-width: 1080px) {
+    .project-tiles {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .project-tiles {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-tile {
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: 86%;
+    object-fit: cover;
+}
+
+figcaption {
+    background-color: #e9abb1;
+    height: 14%;
+    color: black;
+    position: relative;
+    top: -6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span {
+    font-weight: 800;
+}
+
+figcaption span {
+    visibility: hidden;
+    color: #e9abb1;
+}
+
+@keyframes tag {
+    100% {
+        visibility: visible;
+        color: linen;
+    }
+}
+
+.project-link:hover span {
+    animation: 0.5s linear tag;
+    animation-fill-mode: forwards;
+}
+
+.button {
+    margin: 3rem;
+    background-color: #58585f;
+    color: white;
+    padding: 8px 16px;
+}
+
+@keyframes button-anime {
+    100% {
+        background-color: #cb808b;
+    }
+}
+
+.button:hover {
+    animation: 0.2s linear button-anime;
+    animation-fill-mode: forwards;
+}
+
+#profile {
+    font-size: 1rem;
+}
+
+#profile h1 {
+    font-size: 3rem;
+}
+
+.profile-links {
+    margin: 1rem auto;
+    width: 60%;
+    max-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.profile-style, .profile-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+@keyframes profile-anime {
+    20% {
+        position: relative;
+        top: 2px;
+    }
+
+    40% {
+        position: relative;
+        top: 4px;
+    }
+
+    60% {
+        position: relative;
+        top: 6px;
+    }
+
+    80% {
+        position: relative;
+        top: 8px;
+    }
+
+    100% {
+        position: relative;
+        top: 10px;
+    }
+}
+
+.profile-style {
+    padding: 0.4rem;
+}
+
+.profile-style:hover {
+    animation: 0.3s linear profile-anime;
+    animation-fill-mode: forwards;
+}
+
+@keyframes profile-anime-inverse {
+    0% {
+        position: relative;
+        top: 10px;
+    }
+
+    20% {
+        position: relative;
+        top: 8px;
+    }
+
+    40% {
+        position: relative;
+        top: 6px;
+    }
+
+    60% {
+        position: relative;
+        top: 4px;
+    }
+
+    80% {
+        position: relative;
+        top: 2px;
+    }
+
+    100% {
+        position: relative;
+        top: 0px;
+    }
+}
+
+.profile-style:not(:hover) {
+    animation: 0.3s linear profile-anime-inverse;
+    animation-fill-mode: forwards;
+}
