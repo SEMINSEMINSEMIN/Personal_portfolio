@@ -103,15 +103,17 @@ a {
     column-gap: 2.5rem;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1080px) {
     .project-tiles {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
     }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 700px) {
     .project-tiles {
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
     }
 }
 
